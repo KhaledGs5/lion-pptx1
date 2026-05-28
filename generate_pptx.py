@@ -96,13 +96,19 @@ def slide1(prs):
 
     for x in (9.5, 10.25):
         eye = slide.shapes.add_shape(ST.OVAL, Inches(x), Inches(3.2), Inches(0.18), Inches(0.18))
-        eye.fill.solid(); eye.fill.fore_color.rgb = BROWN; eye.line.fill.background()
+        eye.fill.solid()
+        eye.fill.fore_color.rgb = BROWN
+        eye.line.fill.background()
 
     nose = slide.shapes.add_shape(ST.ISOSCELES_TRIANGLE, Inches(9.94), Inches(3.52), Inches(0.25), Inches(0.2))
-    nose.fill.solid(); nose.fill.fore_color.rgb = BROWN; nose.line.fill.background()
+    nose.fill.solid()
+    nose.fill.fore_color.rgb = BROWN
+    nose.line.fill.background()
 
     body = slide.shapes.add_shape(ST.ROUNDED_RECTANGLE, Inches(8.9), Inches(4.5), Inches(2.7), Inches(1.2))
-    body.fill.solid(); body.fill.fore_color.rgb = OLIVE; body.line.fill.background()
+    body.fill.solid()
+    body.fill.fore_color.rgb = OLIVE
+    body.line.fill.background()
 
     add_bullets(slide, [
         "Scientific name: Panthera leo",
@@ -124,20 +130,25 @@ def slide2(prs):
     ])
 
     map_panel = slide.shapes.add_shape(ST.ROUNDED_RECTANGLE, Inches(6.7), Inches(1.9), Inches(5.8), Inches(4.8))
-    map_panel.fill.solid(); map_panel.fill.fore_color.rgb = WHITE
+    map_panel.fill.solid()
+    map_panel.fill.fore_color.rgb = WHITE
     map_panel.line.color.rgb = RGBColor(220, 202, 170)
 
     africa = slide.shapes.add_shape(ST.CLOUD, Inches(7.3), Inches(2.7), Inches(2.9), Inches(2.6))
-    africa.fill.solid(); africa.fill.fore_color.rgb = OLIVE
+    africa.fill.solid()
+    africa.fill.fore_color.rgb = OLIVE
     africa.line.color.rgb = GREEN
 
     india = slide.shapes.add_shape(ST.ROUNDED_RECTANGLE, Inches(10.6), Inches(3.3), Inches(1.1), Inches(0.65))
-    india.fill.solid(); india.fill.fore_color.rgb = SOFT_BLUE
+    india.fill.solid()
+    india.fill.fore_color.rgb = SOFT_BLUE
     india.line.fill.background()
 
     for x, y, color in [(8.2, 3.6, SOFT_RED), (8.7, 4.2, SOFT_RED), (10.95, 3.55, CLAY)]:
         m = slide.shapes.add_shape(ST.OVAL, Inches(x), Inches(y), Inches(0.2), Inches(0.2))
-        m.fill.solid(); m.fill.fore_color.rgb = color; m.line.fill.background()
+        m.fill.solid()
+        m.fill.fore_color.rgb = color
+        m.line.fill.background()
 
     label = slide.shapes.add_textbox(Inches(7.1), Inches(5.6), Inches(5.0), Inches(0.8))
     ltf = label.text_frame
@@ -161,9 +172,14 @@ def slide3(prs):
 
     cx, cy = Inches(9.8), Inches(4.1)
     center = slide.shapes.add_shape(ST.OVAL, cx, cy, Inches(1.7), Inches(1.7))
-    center.fill.solid(); center.fill.fore_color.rgb = CLAY; center.line.color.rgb = BROWN
-    ctf = center.text_frame; ctf.text = "Pride"
-    ctf.paragraphs[0].font.bold = True; ctf.paragraphs[0].font.size = Pt(20); ctf.paragraphs[0].alignment = PP_ALIGN.CENTER
+    center.fill.solid()
+    center.fill.fore_color.rgb = CLAY
+    center.line.color.rgb = BROWN
+    ctf = center.text_frame
+    ctf.text = "Pride"
+    ctf.paragraphs[0].font.bold = True
+    ctf.paragraphs[0].font.size = Pt(20)
+    ctf.paragraphs[0].alignment = PP_ALIGN.CENTER
 
     roles = [
         ("Lionesses", Inches(8.0), Inches(2.5), OLIVE),
@@ -173,9 +189,14 @@ def slide3(prs):
     ]
     for txt, x, y, color in roles:
         box = slide.shapes.add_shape(ST.ROUNDED_RECTANGLE, x, y, Inches(1.8), Inches(0.9))
-        box.fill.solid(); box.fill.fore_color.rgb = color; box.line.fill.background()
-        t = box.text_frame; t.text = txt
-        t.paragraphs[0].font.size = Pt(15); t.paragraphs[0].font.bold = True; t.paragraphs[0].font.color.rgb = WHITE
+        box.fill.solid()
+        box.fill.fore_color.rgb = color
+        box.line.fill.background()
+        t = box.text_frame
+        t.text = txt
+        t.paragraphs[0].font.size = Pt(15)
+        t.paragraphs[0].font.bold = True
+        t.paragraphs[0].font.color.rgb = WHITE
         t.paragraphs[0].alignment = PP_ALIGN.CENTER
 
         conn = slide.shapes.add_connector(1, x + Inches(0.9), y + Inches(0.45), cx + Inches(0.85), cy + Inches(0.85))
@@ -203,7 +224,9 @@ def slide4(prs):
 
     for i, (label, x, color) in enumerate(steps):
         card = slide.shapes.add_shape(ST.ROUNDED_RECTANGLE, x, Inches(2.7), Inches(1.9), Inches(2.2))
-        card.fill.solid(); card.fill.fore_color.rgb = color; card.line.fill.background()
+        card.fill.solid()
+        card.fill.fore_color.rgb = color
+        card.line.fill.background()
         tf = card.text_frame
         tf.text = label
         tf.paragraphs[0].font.size = Pt(18)
@@ -212,17 +235,24 @@ def slide4(prs):
         tf.paragraphs[0].alignment = PP_ALIGN.CENTER
 
         icon = slide.shapes.add_shape(ST.ISOSCELES_TRIANGLE, x + Inches(0.62), Inches(3.35), Inches(0.65), Inches(0.5))
-        icon.fill.solid(); icon.fill.fore_color.rgb = WHITE; icon.line.fill.background()
+        icon.fill.solid()
+        icon.fill.fore_color.rgb = WHITE
+        icon.line.fill.background()
 
         if i < len(steps) - 1:
             arrow = slide.shapes.add_shape(ST.RIGHT_ARROW, x + Inches(1.95), Inches(3.45), Inches(0.85), Inches(0.35))
-            arrow.fill.solid(); arrow.fill.fore_color.rgb = BROWN; arrow.line.fill.background()
+            arrow.fill.solid()
+            arrow.fill.fore_color.rgb = BROWN
+            arrow.line.fill.background()
 
     diet_band = slide.shapes.add_shape(ST.ROUNDED_RECTANGLE, Inches(6.8), Inches(5.3), Inches(6.0), Inches(1.0))
-    diet_band.fill.solid(); diet_band.fill.fore_color.rgb = WHITE; diet_band.line.color.rgb = RGBColor(220, 202, 170)
+    diet_band.fill.solid()
+    diet_band.fill.fore_color.rgb = WHITE
+    diet_band.line.color.rgb = RGBColor(220, 202, 170)
     dt = diet_band.text_frame
     dt.text = "Diet: mostly large herbivores; scavenging helps conserve energy"
-    dt.paragraphs[0].font.size = Pt(16); dt.paragraphs[0].font.color.rgb = CHARCOAL
+    dt.paragraphs[0].font.size = Pt(16)
+    dt.paragraphs[0].font.color.rgb = CHARCOAL
     dt.paragraphs[0].alignment = PP_ALIGN.CENTER
 
     set_notes(slide, "Walk through the sequence from stealth to capture. Clarify that hunts often fail, so energy-efficient behavior like scavenging is important.")
@@ -234,27 +264,39 @@ def slide5(prs):
     add_title(slide, "Threats & Conservation")
 
     left = slide.shapes.add_shape(ST.ROUNDED_RECTANGLE, Inches(0.8), Inches(2.0), Inches(5.9), Inches(4.8))
-    left.fill.solid(); left.fill.fore_color.rgb = RGBColor(250, 235, 226); left.line.color.rgb = SOFT_RED
+    left.fill.solid()
+    left.fill.fore_color.rgb = RGBColor(250, 235, 226)
+    left.line.color.rgb = SOFT_RED
     lt = left.text_frame
     lt.text = "Threats"
-    lt.paragraphs[0].font.bold = True; lt.paragraphs[0].font.size = Pt(24); lt.paragraphs[0].font.color.rgb = SOFT_RED
+    lt.paragraphs[0].font.bold = True
+    lt.paragraphs[0].font.size = Pt(24)
+    lt.paragraphs[0].font.color.rgb = SOFT_RED
     for b in ["Habitat fragmentation", "Human-wildlife conflict", "Declining prey base"]:
         p = lt.add_paragraph()
         p.text = f"• {b}"
-        p.font.size = Pt(19); p.font.color.rgb = CHARCOAL
+        p.font.size = Pt(19)
+        p.font.color.rgb = CHARCOAL
 
     right = slide.shapes.add_shape(ST.ROUNDED_RECTANGLE, Inches(6.7), Inches(2.0), Inches(5.9), Inches(4.8))
-    right.fill.solid(); right.fill.fore_color.rgb = RGBColor(231, 243, 224); right.line.color.rgb = GREEN
+    right.fill.solid()
+    right.fill.fore_color.rgb = RGBColor(231, 243, 224)
+    right.line.color.rgb = GREEN
     rt = right.text_frame
     rt.text = "Solutions"
-    rt.paragraphs[0].font.bold = True; rt.paragraphs[0].font.size = Pt(24); rt.paragraphs[0].font.color.rgb = GREEN
+    rt.paragraphs[0].font.bold = True
+    rt.paragraphs[0].font.size = Pt(24)
+    rt.paragraphs[0].font.color.rgb = GREEN
     for b in ["Protected landscapes", "Community coexistence programs", "Science-led monitoring and policy"]:
         p = rt.add_paragraph()
         p.text = f"• {b}"
-        p.font.size = Pt(19); p.font.color.rgb = CHARCOAL
+        p.font.size = Pt(19)
+        p.font.color.rgb = CHARCOAL
 
     bridge = slide.shapes.add_shape(ST.RIGHT_ARROW, Inches(5.85), Inches(4.05), Inches(1.5), Inches(0.7))
-    bridge.fill.solid(); bridge.fill.fore_color.rgb = CLAY; bridge.line.fill.background()
+    bridge.fill.solid()
+    bridge.fill.fore_color.rgb = CLAY
+    bridge.line.fill.background()
 
     set_notes(slide, "Contrast pressures on lion populations with practical conservation responses. Close by encouraging support for evidence-based conservation programs.")
 
